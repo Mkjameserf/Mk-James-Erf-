@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Uploader</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+body {
+    margin: 10px;
+    display: grid;
+    
+}
+   /* card in-out */
+.container1 .card1 .face.face1{
+    position: relative;
+    background: #007A85;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px);
+    border-radius: 23px;
+}
+.container1 .card1:hover .face.face1{
+    background: #1B0032;
+    transform: translateY(0px);
+    color: #fff;
+}
+.container1 .card1 .face.face1 .content1 i{
+    max-width: 50px;
+}
+.container1 .card1 .face.face2{
+    position: relative;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 49px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px);
+    
+}
+.container1 .card1 .face.face2{
+    transform:translateY(0) ;
+}
+.face.face2{
+    height: 10px;
+}
+.face.face1{
+    height: 10em;
+}
+ 
+          form {
+  width: 300px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.preview {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.preview {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.preview video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+nav:has(a.active) {
+    color: amber;
+}
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: white;
+        width: 200px;
+        padding: 20px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .services-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.logo{
+    font-weight: bolder;
+}
+    .icon {
+    width: 600px;
+     float: left;
+    height: 70px;
+        }
+    img {
+            width: 70px;
+            float: left;
+            border-radius: 25%;
+            margin-right: 5px; 
+    
+    }
+    .dark{
+        background: #111;
+    }
+    .but{
+        float: right;
+        background: transparent;
+        border-radius: 5px;
+        margin-top: 3px;
+        font-weight: bolder;
+        font-size: 18px;
+    }
+    .but:hover{
+    cursor: pointer;
+        box-shadow: 0 0 5px #ff7200, 0 0 5px #ff7200;
+    transition: 0.4s ease-in-out;
+    }
+    .form {
+        margin-top: 79px;
+    }
+    .txt {
+        text-align: center;
+        border: 1px inset #00E8DD;
+        border-radius: 5px;
+        border-top: none;
+        background: #10122E;
+        color: #fff;
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+             <nav class="navbar">
+        <div class="icon"><img src="/storage/emulated/0/xender/image/1741687179226-1.jpg">
+        <div class="logo">Mk James Erf'</div>
+        </div>
+            <ul class="nav-links">
+                <button class="but" onclick="document.body.classList.toggle('dark')">⛅</button><            <li><a href="#form">Form</a></li>
+                
+            </ul>
+            <div class="menu-toggle">&#9776;</div>
+        </nav>       
+        <!-- card in-out -->
+
+</header>
+
+  <!-- Vid, Img and othr upload -->
+
+  <section class="form">
+      
+
+  <form id="upload-form">
+      <p class="txt"> <b>COMPLETE THIS FIELD</b></p>
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" required>
+
+    <label for="image">Image:</label>
+    <input type="file" id="image" accept="documents/*">
+
+ 
+
+    <label for="number">Phone No.:</label>
+     <input type="number" required/>
+     <label for="password">Password:</label>
+      <div>
+         <input type="password" placeholder="Enter Password" id="pwd" required>
+         <label for="See Password"><i>See Password<input type="checkbox" onclick="pwd.type = this.checked ? 'text' : 'Password'" align="left"></label></i>
+      </div>
+         <label for="description">Description:</label>
+    <textarea id="description"></textarea>
+      <button type="submit">Submit</button>
+      </form>
+    </section>
+<div class="preview" id="preview">
+      <img class="" src="" alt="" />
+      <video src="/storage/emulated/0/download/csd.mp4" height="" width="" preload="none" autoplay="autoplay" controls="controls"
+      ></video>
+  </div>
+  <div class="container1">
+    <div class="card1">
+        <div class="face face1">
+            <div class="content1">
+                <div class="icon1">
+                    <i class="fa fa-linkedin-square" aria-hidden="true">Fill out this form to get started!</i>
+                    
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="face face2" hidden="^1">
+            <div class="content1">
+                <h3>
+                    <a href="#" target="_blank">Card</a>
+                </h3>
+                <p>@Mk James Erf, your privacy and its security matters a lot to our brand</p>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+  <script src="script.js">
+
+const Password = document.getElementById('Submit');
+submit.onclick = () => {
+    if(passwordTypedQuickly)
+    Error('Wrong Password!');
+}
+
+
+
+
+// file uploads
+const fileInput = document.getElementById('file-input');
+const preview = document.getElementById('preview');
+
+fileInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  if (file) {
+    const fileType = file.type;
+    if (fileType.startsWith('image/')) {
+      const img = document.createElement('img');
+      img.src = URL.createObjectURL(file);
+      preview.innerHTML = '';
+      preview.appendChild(img);
+       img.src = URL.createObjectURL(file);
+      preview1.innerHTML = '';
+      preview1.appendChild(img);
+       img.src = URL.createObjectURL(file);
+      preview2.innerHTML = '';
+      preview2.appendChild(img);
+    } else if (fileType.startsWith('video/')) {
+      const video = document.createElement('video');
+      video.src = URL.createObjectURL(file);
+      video.controls = true;
+      preview.innerHTML = '';
+      preview.appendChild(video);
+      preview1.innerHTML = '';
+      preview1.appendChild(video);
+      preview2.innerHTML = '';
+      preview2.appendChild(video);
+    } else {
+      preview.textContent = `File type not supported: ${fileType}`;
+    }
+  }
+});
+
+
+ </script>
+</body>
+</html>
